@@ -1,0 +1,29 @@
+<div class="card mx-auto" style="width: 50em;">
+    <div class="card-body">
+        <h4 class="card-title">{{action}}</h4>
+        <p class="card-description">
+            {{action}} a piste
+        </p>
+        <form class="forms-sample" [formGroup]="form" (ngSubmit)="submit()">
+            <div class="form-group">
+                <label for="nomClub">name</label>
+                <input class="form-control" [(ngModel)]="club.namePiste" type="text" formControlName="namePiste">
+            </div>
+            <div class="form-group">
+                <label for="color">color</label>
+                <input class="form-control" [(ngModel)]="club.color" type="text" formControlName="color">
+            </div>
+            <div class="form-group">
+                <label for="length">length</label>
+                <input class="form-control" [(ngModel)]="club.length" type="number" formControlName="length">
+            </div>
+            <div class="form-group">
+                <label for="slope">slope</label>
+                <input class="form-control" [(ngModel)]="club.slope" type="number" formControlName="slope">
+            </div>
+
+            <button type="submit" class="btn btn-primary me-2">Confirm</button>
+            <button class="btn btn-light">Cancel</button>
+        </form>
+    </div>
+</div>

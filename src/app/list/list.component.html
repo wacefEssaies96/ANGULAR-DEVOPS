@@ -1,0 +1,49 @@
+<a class="btn btn-sm btn-success" routerLink="/add">Add</a>
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Pistes</h4>
+        <div style="float: right;">
+            <input type="text" class="form-control" placeholder="&#61442; Search Here" title="Search here">
+        </div>
+        <p class="card-description">
+            List of pistes
+        </p>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Color</th>
+                        <th>length</th>
+                        <th>Slope</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let e of pistes
+                      let i = index">
+                        <td>{{ e.numPiste }}</td>
+                        <td>{{ e.namePiste }}</td>
+                        <td>{{ e.color }}</td>
+                        <td>{{ e.length }}</td>
+                        <td>{{ e.slope }}</td>
+                        <td>
+                            <!-- [routerLink]="['/admin/student/update',e.numPiste]" -->
+                            <!-- <a 
+                                class="btn btn-sm btn-outline-warning">
+                                update
+                            </a> -->
+                            <!-- &nbsp; -->
+                            <button class="btn btn-sm btn-outline-danger" (click)="delete(e)">
+                                delete
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-center">
+            </div>
+        </div>
+    </div>
+</div>
